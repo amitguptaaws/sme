@@ -1,0 +1,26 @@
+{
+	"version": 0,
+	"os": "linux",
+	"files": [
+		{
+			"source": "/",
+			"destination": "/opt/bin"
+		}
+	],
+	"permissions": [
+		{
+			"object": "/opt/bin",
+			"pattern": "**",
+			"mode": 755,
+			"type": ["file"]
+		}
+	],
+	"hooks": {
+		"AfterInstall": [
+			{
+				"location": "Scripts/ip.sh",
+				"runas": "root"
+			}
+		]
+	}
+}
